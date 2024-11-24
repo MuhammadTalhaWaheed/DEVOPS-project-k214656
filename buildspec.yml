@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing build tools...
+      - yum install -y gcc
+
+  build:
+    commands:
+      - echo Compiling the C++ code...
+      - g++ main.cpp -o main
+      - echo Build complete!
+
+  post_build:
+    commands:
+      - echo Running the built executable...
+      - ./main AWS_User
